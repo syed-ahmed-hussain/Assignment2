@@ -1,0 +1,267 @@
+    body{	
+		background-color: black;
+		font-family: sans-serif;
+	}
+	
+	#head{
+		color: white;
+		text-align: center;
+		background-color: black;
+	
+	}
+	
+	#main{
+        background-color: #f3f3f3;
+		width: 100%;
+		height: 97%;
+		animation-name: fadeIn;
+		animation-duration: 1s;
+		z-index: 1;
+		border-radius: 3%;
+    }
+	
+	.column{
+		
+		height: 100%;
+		width: 33.33%;
+		float: left;
+		padding-left: 2%;
+		padding-right: 2%;
+		padding-top: 11%;
+		padding-bottom: 5%;
+    }
+	
+	.box{
+		background-color: #cccccc;
+		width: 100%;
+		height: 100%;
+		padding: 2%;
+	}
+	
+	.rounded{
+		border-radius: 10%;
+	}
+	
+	.calendar{
+		color:white;
+        background-color:black;
+        width:100%;
+		height:100%;
+        margin:auto;
+        
+	}
+	
+	.calendar th{
+		font-size: 150%;
+		color:white;
+        background-color:green;
+        width:14%;
+	}
+
+	.calendar td{
+		font-size: 150%;
+		color:black;
+        background-color:white;
+        text-align:center;
+        width:14%;
+        height:14%;
+	}
+	
+	.calendar td:hover {
+		background: #46fc3c;
+		background-image: -webkit-linear-gradient(top, #46fc3c, #55d934);
+		background-image: -moz-linear-gradient(top, #46fc3c, #55d934);
+		background-image: -ms-linear-gradient(top, #46fc3c, #55d934);
+		background-image: -o-linear-gradient(top, #46fc3c, #55d934);
+		background-image: linear-gradient(to bottom, #46fc3c, #55d934);
+		text-decoration: none;
+	}
+	
+	#bigcalendar{
+		height: 100%;
+		width: 100%;
+		padding:5% 10%;
+		display: none;
+		animation-name: fadeIn;
+		animation-duration: 0.5s;
+	}
+	
+	#clock{
+		height: 100%;
+		width: 100%;
+		background-size: 100% 100%;
+		background-image: url('../img/face.jpg');
+		border-radius:10%;
+		
+	}
+	
+	#clock div{
+		position: absolute;
+	}
+	
+	#bigclock{
+		height: 100%;
+		width: 100%;
+		padding:1% 25%;
+		display:none;
+		animation-name: fadeIn;
+		animation-duration: 0.5s;
+	}
+	
+	.big{
+		top:19.5%;
+		left:36.5%;
+	}
+	
+	#weather{
+		position:absolute;
+		height: 100%;
+		width: 100%;
+		max-height: 58.5%;
+		max-width: 27.8%;
+		padding-top: 3%;
+		background-size: 100% 100%;
+		text-align:center;
+		font-size: 130%;
+		color: white;
+		background-image: url('../img/weather-background.jpg');
+		background-repeat: none;
+		border-radius:10%;
+		
+	}
+	
+	#temperature{
+		position:absolute;
+		top:5%;
+		left:10%;
+		width: 80%;
+		height: 25%;
+		background-color:black;
+		opacity:0.5;
+		text-align:center;
+		padding: 5%;
+		font-size: 250%;
+		border-radius: 12%;
+	}
+	
+	#forecast{
+		position:absolute;
+		bottom:5%;
+		left:3%;
+		width: 94%;
+		height: 60%;
+		padding-top: 4%;
+		background-color:black;
+		opacity:0.5;
+		border-radius: 11%;
+	}
+	
+	.forecasttable{
+		position:absolute;
+		bottom:5%;
+		left:4%;
+		width: 94%;
+		height: 60%;
+		color:white;
+		text-align: center;
+		font-size: 150%;
+		
+	}
+	
+	#newweather{
+		height: 100%;
+		width: 100%;
+		padding-top: 4%;
+		text-align:center;
+		font-size: 200%;
+		color: white;
+		background-size: 100% 100%;
+		background-image: url('../img/weather-background.jpg');
+		background-repeat: none;
+		border-radius:5%;
+	}
+	
+	#newtemperature{
+		position:absolute;
+		top:14%;
+		left:30%;
+		width: 40%;
+		height: 20%;
+		background-color:black;
+		opacity:0.5;
+		text-align:center;
+		padding-top: 2%;
+		font-size: 250%;
+		border-radius: 12%;
+	}
+	
+	#newforecast{
+		position:absolute;
+		bottom:12%;
+		left:15%;
+		width: 70%;
+		height: 52%;
+		background-color:black;
+		opacity:0.5;
+		border-radius: 12%;
+	}
+	
+	#bigweather{
+		height: 100%;
+		width: 100%;
+		padding:5% 10%;
+		display: none;
+		animation-name: fadeIn;
+		animation-duration: 0.5s;
+	}
+	
+	button{
+		background: #63d934;
+		background-image: linear-gradient(to bottom, #63d934, #2bb82b);
+		border-radius: 28px;
+		font-family: Arial;
+		color: #ffffff;
+		font-size: 20px;
+		padding: 10px 20px 10px 20px;
+		text-decoration: none;
+	}
+
+	button:hover{
+		background: #46fc3c;
+		background-image: -webkit-linear-gradient(top, #46fc3c, #55d934);
+		background-image: -moz-linear-gradient(top, #46fc3c, #55d934);
+		background-image: -ms-linear-gradient(top, #46fc3c, #55d934);
+		background-image: -o-linear-gradient(top, #46fc3c, #55d934);
+		background-image: linear-gradient(to bottom, #46fc3c, #55d934);
+		text-decoration: none;
+	}
+	
+	*{
+		box-sizing: border-box;
+	}
+	
+	.close{
+		color: white;
+		font: 120%/100% arial, sans-serif;
+		position: absolute;
+		right: 0.5%;
+		text-decoration: none;
+		top: 0.5%;
+	}
+	
+	@keyframes fadeIn {
+		0% { opacity: 0; }
+		20% { opacity: 0; }
+		40% { opacity: 0 }
+		60% { opacity: 0; }
+		80% { opacity: 0; }
+		100% { opacity: 1; }
+	}
+
+	h1{
+		position:absolute;
+		top:8%;
+		left:3%;
+		z-index: 2;
+	}
+        

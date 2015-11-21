@@ -1,0 +1,127 @@
+<html>
+<head>
+<title>Assignment 2</title>
+<link rel="stylesheet" type="text/css" href="css/mystyle.css">
+<script src="js/angular.js"></script>
+<script src="js/working.js"></script>
+</head>
+<body onload = "setClock()" ng-app="MyApp" >
+<header id ="head">COPYRIGHT 2015: Proudly powered by Syed Ahmed Hussain</header>
+<div id = "main">
+<h1>Welcome to My Dashboard</h1>
+	<div class = "column">
+		<div class = "rounded box" onclick = "openit(1)" >
+			<div id="clock">	
+				<div id="sec"><img src="img/secondHand.png" /></div>
+				<div id="hour"><img src="img/hourHand.png" /></div>
+				<div id="min"><img src="img/minuteHand.png" /></div>
+			</div>
+		</div>
+	</div>
+	<div class = "column">
+		<div class = "box" onclick = "openit(2)">
+			<table class="calendar" ng-controller="CalendarController">
+				<tr><th id = "currentdate" colspan="7">{{ header }}</th></tr>
+				<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>
+				<tr class="day" ng-repeat="x in arr track by $index" ng-if="$index % 7 == 0">
+					<td>{{ arr[$index + 0] }}</td>
+					<td>{{ arr[$index + 1] }}</td>
+					<td>{{ arr[$index + 2] }}</td>
+					<td>{{ arr[$index + 3] }}</td>
+					<td>{{ arr[$index + 4] }}</td>
+					<td>{{ arr[$index + 5] }}</td>
+					<td>{{ arr[$index + 6] }}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<div class = "column">
+		<div class = "rounded box" onclick = "openit(3)">
+			<div id = "weather" ng-controller="WeatherController">
+				<div id ="temperature">
+				{{weather.condition.temp}} F&nbsp;&nbsp;{{weather.condition.text}}
+				</div>
+				<div id ="forecast">
+				<b> {{weather.forecast[0].day }}</b></br>
+				Low: {{weather.forecast[0].low}} &nbsp;&nbsp; High: {{weather.forecast[0].high}} &nbsp;&nbsp; {{weather.forecast[0].text}} </br></br>
+				<b> {{weather.forecast[1].day }}</b></br>
+				Low: {{weather.forecast[1].low}} &nbsp;&nbsp; High: {{weather.forecast[1].high}} &nbsp;&nbsp; {{weather.forecast[1].text}} </br></br>
+				<b> {{weather.forecast[2].day }}</b></br>
+				Low: {{weather.forecast[2].low}} &nbsp;&nbsp; High: {{weather.forecast[2].high}} &nbsp;&nbsp; {{weather.forecast[2].text}} </br>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div id = "bigcalendar">
+	<a href="#" class="close" onclick = "closeit(1)">X</a>
+	<table class="calendar" ng-controller="CalendarController" >
+		<tr>
+			<th id = "currentdate" colspan="7">
+				<button ng-click="back()"><</button>
+				{{count}}
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ header }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<button ng-click="next()">></button>
+			</th>
+		</tr>
+		<tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+		</tr>
+		<tr class="day" ng-repeat="x in arr track by $index" ng-if="$index % 7 == 0">
+			<td>{{ arr[$index + 0] }}</td>
+			<td>{{ arr[$index + 1] }}</td>
+			<td>{{ arr[$index + 2] }}</td>
+			<td>{{ arr[$index + 3] }}</td>
+			<td>{{ arr[$index + 4] }}</td>
+			<td>{{ arr[$index + 5] }}</td>
+			<td>{{ arr[$index + 6] }}</td>
+		</tr>
+	</table>
+</div>
+<div id = "bigclock">
+	<a href="#" class="close" onclick = "closeit(2)">X</a>
+		<div id="clock"> 
+			<div id="bigsec" class="big"><img src="img/secondHand.png" /></div>
+			<div id="bighour" class="big"><img src="img/hourHand.png" /></div>
+			<div id="bigmin" class="big"><img src="img/minuteHand.png" /></div>
+		</div>
+</div>
+<div id = "bigweather">
+	<a href="#" class="close" onclick = "closeit(3)">X</a>
+	<div id = "newweather" ng-controller="WeatherController">
+		<div id ="newtemperature">
+			{{weather.condition.temp}} F&nbsp;&nbsp;{{weather.condition.text}}
+		</div>
+		<div id ="newforecast">
+			<table class= "forecasttable">
+			<tr><td><b> {{weather.forecast[0].day}}</b></td>
+				<td>Low: {{weather.forecast[0].low}}</td>
+				<td>High: {{weather.forecast[0].high}} </td>
+				<td>{{weather.forecast[0].text}}</td>
+			</tr>
+			<tr><td><b> {{weather.forecast[1].day}}</b></td>
+				<td>Low: {{weather.forecast[1].low}}</td>
+				<td>High: {{weather.forecast[1].high}} </td>
+				<td>{{weather.forecast[1].text}}</td>
+			</tr>
+			<tr><td><b> {{weather.forecast[2].day}}</b></td>
+				<td>Low: {{weather.forecast[2].low}}</td>
+				<td>High: {{weather.forecast[2].high}} </td>
+				<td>{{weather.forecast[2].text}}</td>
+			</tr>
+			<tr><td><b>{{weather.forecast[3].day }}</b></td>
+				<td>Low:{{weather.forecast[3].low}}</td>
+				<td>High:{{weather.forecast[3].high}} </td>
+				<td>{{weather.forecast[3].text}}</td>
+			</tr>
+			<tr><td><b> {{weather.forecast[4].day}}</b></td>
+				<td>Low: {{weather.forecast[4].low}}</td>
+				<td>High: {{weather.forecast[4].high}} </td>
+				<td>{{weather.forecast[4].text}}</td>
+			</tr>
+			</table>
+		</div>
+	</div>
+</div>
+		
+</body>
+</html>
